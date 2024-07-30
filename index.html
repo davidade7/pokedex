@@ -3,11 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Pokédex</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>Pokemon Search App</title>
 </head>
 <body>
-  <h1>TEMP</h1>
-  <script src="./scripts.js"></script>
+  <div id="pokemon-search-app">
+    <div id="search-bar">
+      <label for="search-input">Search for Pokémon Name or ID:
+      </label>
+      <input type="text" id="search-input" required>
+      <button id="search-button">
+        <svg data-slot="icon" fill="none" width="18" height="18" stroke-width="2.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z">
+          </path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden" id="background">
+    </div>
+
+
+    <div id="pokemon-info" class="hidden">
+      <div id="img"></div>
+      <p><span id="pokemon-name"></span><span id="pokemon-id"></span></p>
+      <p>Weight: <span id="weight"></span> - Height: <span id="height"></span></p>
+     
+      <div id="types"></div>
+    </div>
+  
+    <table id="pokemon-stats" class="hidden">
+      <thead>
+        <tr>
+          <th>Base</th>
+          <th>Stats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>HP:</th>
+          <td id="hp"></td>
+        </tr>
+        <tr>
+          <th>Attack:</th>
+          <td id="attack"></td>
+        </tr>
+        <tr>
+          <th>Defense:</th>
+          <td id="defense"></td>
+        </tr>
+        <tr>
+          <th>Sp. Attack:</th>
+          <td id="special-attack"></td>
+        </tr>
+        <tr>
+          <th>Sp. Defense:</th>
+          <td id="special-defense"></td>
+        </tr>
+        <tr>
+          <th>Speed:</th>
+          <td id="speed"></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  
+  
+
+
+  <script src="scripts.js"></script>
 </body>
 </html>
