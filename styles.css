@@ -6,20 +6,24 @@ body {
   justify-content: center;
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
+  background-color: #F4D23C;
 }
 
 #pokemon-search-app {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   max-width: calc(430px - 30px);
   width: 100%;
   padding: 15px;
-
+  background-color: rgb(238, 238, 238);
+  z-index: 2;
+  overflow: hidden;
 }
 
 #search-bar {
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
+  z-index: -1;
 }
 
 #search-bar label {
@@ -291,19 +295,29 @@ body {
   background-image: url('./assets/fairy.svg'); 
 }
 
+
+h2 {
+  text-align: left;
+  margin: 20px 0 10px 20px;
+  font-size: 1.25rem;
+  color: rgb(85, 85, 85)
+}
+
 /* table */
 table {
   margin: auto;
-  border-collapse: collapse;
-  background-color: rgba(255, 255, 255,0.5);
+  background-color: transparent;
 }
-table, tr, th, td {
-  border: 1px solid black;
-}
-tr, th, td {
-  border: 1px solid black;
+th, td {
   padding: 5px 15px;
+}
+th {
+  text-align: right;
 }
 td {
   text-align: center;
+}
+
+progress {
+  height: 20px;
 }

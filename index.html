@@ -20,53 +20,59 @@
       </button>
     </div>
 
-    <div class="hidden" id="background">
-    </div>
+    
 
 
     <div id="pokemon-info" class="hidden">
+      <div id="background"></div>
+
       <div id="img"></div>
       <p><span id="pokemon-name"></span><span id="pokemon-id"></span></p>
       <p>Weight: <span id="weight"></span> - Height: <span id="height"></span></p>
      
       <div id="types"></div>
+
+      <h2>Base Stats</h2>
+      <table id="pokemon-stats">
+        <tbody>
+          <tr>
+            <th>HP</th>
+            <td><progress id="hp-progress" value="" max="255"></progress></td>
+            <td id="hp"></td>
+          </tr>
+          <tr>
+            <th>Attack</th>
+            <td><progress id="att-progress" value="" max="255"></progress></td>
+            <td id="attack"></td>
+          </tr>
+          <tr>
+            <th>Defense</th>
+            <td><progress id="def-progress" value="" max="255"></progress></td>
+            <td id="defense"></td>
+          </tr>
+          <tr>
+            <th>Sp. Attack</th>
+            <td><progress id="spe-att-progress" value="" max="255"></progress></td>
+            <td id="special-attack"></td>
+          </tr>
+          <tr>
+            <th>Sp. Defense</th>
+            <td><progress id="spe-def-progress" value="" max="255"></progress></td>
+            <td id="special-defense"></td>
+          </tr>
+          <tr>
+            <th>Speed</th>
+            <td><progress id="speed-progress" value="" max="255"></progress></td>
+            <td id="speed"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   
-    <table id="pokemon-stats" class="hidden">
-      <thead>
-        <tr>
-          <th>Base</th>
-          <th>Stats</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>HP:</th>
-          <td id="hp"></td>
-        </tr>
-        <tr>
-          <th>Attack:</th>
-          <td id="attack"></td>
-        </tr>
-        <tr>
-          <th>Defense:</th>
-          <td id="defense"></td>
-        </tr>
-        <tr>
-          <th>Sp. Attack:</th>
-          <td id="special-attack"></td>
-        </tr>
-        <tr>
-          <th>Sp. Defense:</th>
-          <td id="special-defense"></td>
-        </tr>
-        <tr>
-          <th>Speed:</th>
-          <td id="speed"></td>
-        </tr>
-      </tbody>
-    </table>
+    
 
+
+  
   </div>
   
   
