@@ -29,6 +29,12 @@ const progPkSpeed = document.getElementById("speed-progress")
 
 const pkemonAPIUrl = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/"
 
+// url to pokeapi
+const pokeapi = "https://pokeapi.co/api/v2/pokemon/"
+const pokeapiSpecies = "https://pokeapi.co/api/v2/pokemon-species/"
+
+
+// Function to check input
 const checkInput = async () => {
   const inputValue = searchInput.value
   
@@ -40,16 +46,21 @@ const checkInput = async () => {
   }
 } 
 
+// Function to get pokemon
 const getPokemon = async name => {
   try {
+    // Clear previous data
     pkTypes.innerText = ""
     background.className = ""
     pokeInfo.classList.remove("hidden")
 
-    const response = await fetch(pkemonAPIUrl + name)
+    // Fetch data
+    const response = await fetch(pokeapi + name)
     const pokemon = await response.json()
-    //console.log(pokemon)
+    const response2 = await fetch(pokeapiSpecies + name)
+    const pokemonSpecies = await response2.json()
   
+    // Display data
     pkName.innerText = pokemon.name.toUpperCase()
     pkId.innerText = pokemon.id
     pkWeight.innerText = pokemon.weight / 10
@@ -82,6 +93,7 @@ const getPokemon = async name => {
   }
 }
 
+// Event listeners
 searchBtn.addEventListener("click", checkInput);
 searchInput.addEventListener("keydown", e => {
   if (e.key === 'Enter') {
