@@ -16,7 +16,7 @@ body {
   padding: 15px;
   background-color: rgb(238, 238, 238);
   z-index: 2;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #search-bar {
@@ -62,7 +62,7 @@ body {
 /* ---------- */
 
 #background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 50%;
   width: 500px;
@@ -126,11 +126,11 @@ body {
   background: linear-gradient(135deg, rgb(236, 143, 230), rgba(236, 143, 230, 0.5)); 
 }
 
-
-
 #pokemon-info {
   text-align: center;
   margin-bottom: 20px;
+  /* position: relative;
+  top: -500px; */
 }
 
 #pokemon-info img {
@@ -320,4 +320,18 @@ td {
 
 progress {
   height: 20px;
+}
+
+/* Evolutions */
+.evolution {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+.evolution div img {
+  width: 100px !important; 
+  height: 100px !important;
 }
