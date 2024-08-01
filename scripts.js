@@ -4,12 +4,12 @@ const imgDiv = document.getElementById("img")
 const app = document.getElementById("pokemon-search-app")
 const pokeInfo = document.getElementById("pokemon-info")
 const pokeEvo = document.getElementById("pokemon-evolutions")
-// const pokeStats = document.getElementById("pokemon-stats")
 const background = document.getElementById("background");
 
 // pokemon info
 const pkName = document.getElementById("pokemon-name")
 const pkId = document.getElementById("pokemon-id")
+const pkDescription = document.getElementById("description")
 const pkWeight = document.getElementById("weight")
 const pkHeight = document.getElementById("height")
 const pkTypes = document.getElementById("types")
@@ -52,6 +52,7 @@ const getPokemon = async name => {
   try {
     // Clear previous data
     pkTypes.innerText = ""
+    background.classList.remove("hidden")
     background.className = ""
     pokeInfo.classList.remove("hidden")
     pokeEvo.innerHTML = ""
@@ -64,7 +65,8 @@ const getPokemon = async name => {
   
     // Display data
     pkName.innerText = pokemon.name.toUpperCase()
-    pkId.innerText = pokemon.id
+    pkId.innerText = pokemon.id    
+    pkDescription.innerText = pokemonSpecies.flavor_text_entries[0].flavor_text.replace(/[\n\f]/g, ' ');
     pkWeight.innerText = pokemon.weight / 10
     pkHeight.innerText = pokemon.height / 10
     imgDiv.innerHTML = `
@@ -120,19 +122,17 @@ const getPokemon = async name => {
     for (let i = 0; i < evolution.length; i++) {
       pokeEvo.innerHTML += `
         <div class="evolution">
-          <div>
+          <div class='image bg-${evolution[i].types[0].type.name}'>
             <img src="${evolution[i].sprite}" alt="${evolution[i].name}" />
           </div>
-          <div>
-            <p>${evolution[i].name.toUpperCase()} <span>${evolution[i].id}</span></p>
+          <div class='evo-infos'>
+            <p>${evolution[i].name.toUpperCase()} <span class="evo-id">${evolution[i].id}</span></p>
             <p>
               ${evolution[i].types.map(type => `
                 <span class='type ${type.type.name}'>${type.type.name.toUpperCase()}</span>
               `).join("")}
             </p>
           </div>
-          
-          
         </div>
       `
     }

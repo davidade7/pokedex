@@ -8,30 +8,41 @@
 </head>
 <body>
   <div id="pokemon-search-app">
+    
+    <!-- Search area -->
     <div id="search-bar">
-      <label for="search-input">Search for Pokémon Name or ID:
-      </label>
-      <input type="text" id="search-input" required>
-      <button id="search-button">
-        <svg data-slot="icon" fill="none" width="18" height="18" stroke-width="2.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z">
-          </path>
-        </svg>
-      </button>
+      <div id="background" class="hidden"></div>
+      
+      <div id="search-module">
+        <label for="search-input">Search for Pokémon Name or ID:
+        </label>
+        <div id="search">
+          <input type="text" id="search-input" required>
+          <button id="search-button">
+            <svg data-slot="icon" fill="none" width="18" height="18" stroke-width="2.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
 
-    
-
-
+    <!-- Pokemon infos -->
     <div id="pokemon-info" class="hidden">
-      <div id="background"></div>
-
       <div id="img"></div>
       <p><span id="pokemon-name"></span><span id="pokemon-id"></span></p>
+      
+      <div class="separator"></div>
+      <h2>Main informations</h2>
+      <h3>Description</h3>
+      <p id="description"></p>
+      <h3>Dimensions</h3>
       <p>Weight: <span id="weight"></span> - Height: <span id="height"></span></p>
-     
+      <h3>Types</h3>
       <div id="types"></div>
 
+      <div class="separator"></div>
       <h2>Base Stats</h2>
       <table id="pokemon-stats">
         <tbody>
@@ -68,6 +79,7 @@
         </tbody>
       </table>
 
+      <div class="separator"></div>
       <h2>Evolutions</h2>
       <div id="pokemon-evolutions"></div>
     </div>

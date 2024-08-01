@@ -10,7 +10,6 @@ body {
 }
 
 #pokemon-search-app {
-  /* border: 1px solid black; */
   max-width: calc(430px - 30px);
   width: 100%;
   padding: 15px;
@@ -19,17 +18,26 @@ body {
   overflow-x: hidden;
 }
 
+#search-module {
+  z-index: 2;
+}
+
 #search-bar {
-  flex-wrap: wrap;
+  position: relative;
   display: flex;
   justify-content: center;
-  z-index: -1;
 }
 
 #search-bar label {
   display: block;
   margin-bottom: 10px;
 }
+
+#search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
 
 #search-bar input {
   font-size: 1rem;
@@ -47,6 +55,7 @@ body {
   background-color: #ff822e;
   padding: 0 10px;
   transition: all ease-in 0.3s;
+  height: 28px;
 }
 
 #search-bar button:hover {
@@ -55,21 +64,20 @@ body {
   transition: all ease-in 0.3s;
 }
 
-/* At start, do not show data */
+/* At start, do not show some data */
 .hidden {
   display: none
 }
 /* ---------- */
 
 #background {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: -25px;
   left: 50%;
   width: 500px;
   height: 500px; 
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1; 
 }
 .bg-normal {
   background: linear-gradient(135deg, rgb(145, 154, 162), rgba(145, 154, 162, 0.5)); 
@@ -127,30 +135,31 @@ body {
 }
 
 #pokemon-info {
+  position: relative;
+  height: calc(100vh + 100px);
   text-align: center;
   margin-bottom: 20px;
-  /* position: relative;
-  top: -500px; */
+  z-index: 1;
 }
-
 #pokemon-info img {
   width: 175px;
   height: 175px;
 }
-
 #pokemon-name {
   font-weight: bold;
   margin-right: 15px;
   font-size: 1.5rem;
 }
-
 #pokemon-id {
   font-style: italic;
 }
-#pokemon-id::before {
+#pokemon-id::before, .evo-id::before {
   content: "#";
 }
-
+#description {
+  text-align: left;
+  margin-left: 20px;
+}
 #weight, #height {
   font-weight: bold;
 }
@@ -182,7 +191,6 @@ body {
   margin: 0 3px 3px 0;
 }
 
-
 /* color types */
 .normal {
   background-color: rgb(145, 154, 162)
@@ -191,7 +199,7 @@ body {
   background-color: #FF9D55
 }
 .fighting {
-  background-color: rgb(206, 65, 107)
+  background-color: #ce416b
 }
 .water {
   background-color: #5090D6;
@@ -295,12 +303,21 @@ body {
   background-image: url('./assets/fairy.svg'); 
 }
 
-
 h2 {
   text-align: left;
   margin: 20px 0 10px 20px;
   font-size: 1.25rem;
   color: rgb(85, 85, 85)
+}
+h3 {
+  font-size: 1rem;
+  color: rgb(85, 85, 85);
+  margin: 20px 0 10px 0;
+}
+.separator {
+  background-color: rgb(175, 175, 175);
+  height: 2px;
+  margin: 20px 10px;
 }
 
 /* table */
@@ -323,15 +340,30 @@ progress {
 }
 
 /* Evolutions */
+#pokemon-evolutions {
+  padding-bottom: 1px;
+}
 .evolution {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-  border: 2px solid gray;
-  border-radius: 10px;
+  border: 2px solid rgb(175, 175, 175);
+  border-radius: 20px;
+}
+.image {
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 0 0 15px rgba(100, 100, 100, 0.5);
 }
 .evolution div img {
-  width: 100px !important; 
-  height: 100px !important;
+  width: 90px !important; 
+  height: 90px !important;
+}
+.evo-infos {
+  width: 100%
+}
+.evo-id {
+  font-weight: bold;
+  font-size: 0.9rem;
 }
